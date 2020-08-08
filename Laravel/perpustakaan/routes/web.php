@@ -22,9 +22,6 @@ Route::get('/users', function () {
     return view('admin.users.index');
 });
 
-Route::get('/admin', function () {
-    return "admin page";
-})->name('admin');
 
 Auth::routes(['verify' => true]);
 
