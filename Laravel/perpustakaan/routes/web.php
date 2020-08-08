@@ -16,3 +16,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('admin.templates.default');
 });
+
+Route::get('/users', function () {
+    return view('admin.users.index');
+});
