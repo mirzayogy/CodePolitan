@@ -15,7 +15,16 @@ class CreateBorrowHistoryTable extends Migration
     {
         Schema::create('borrow_history', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('book_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
+
+            $table->foreign('book_id')->references('id')->on('books')
+                ->onUpdate('CASCADE')
+                ->onDelete('CASCADE');
+            $table->foreign('user_id')->references('id')->on('users')
+            ->onUpdate('CASCADE')
+            ->onDelete('CASCADE');
         });
     }
 
