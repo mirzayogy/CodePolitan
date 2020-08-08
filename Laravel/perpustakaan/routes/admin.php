@@ -2,6 +2,4 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route ::get('/', function () {
-    return "admin page";
-})->name('dashboard');
+Route ::get('/', 'HomeController@index')->name('dashboard');
