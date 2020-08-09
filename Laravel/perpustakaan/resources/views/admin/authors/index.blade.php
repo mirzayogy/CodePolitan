@@ -6,6 +6,7 @@
     <div class="card">
         <div class="card-header">
             <h3 class="card-title">Data Penulis</h3>
+            <a href="{{route('admin.author.create')}}" class="btn btn-sm btn-success"><i class="fa fa-plus"></i>Tambah</a>
         </div>
         <div class="card-body">
             <table id="dataTable" class="table table-bordered table-striped dataTable">
