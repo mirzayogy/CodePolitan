@@ -14,7 +14,7 @@ class AddQtyOnBooksTable extends Migration
     public function up()
     {
         Schema::table('books', function (Blueprint $table) {
-            //
+            $table->string('qty')->after('cover');
         });
     }
 
@@ -26,7 +26,7 @@ class AddQtyOnBooksTable extends Migration
     public function down()
     {
         Schema::table('books', function (Blueprint $table) {
-            //
+            $table->dropColumn('qty');
         });
     }
 }
