@@ -60,7 +60,9 @@ class AuthorController extends Controller
      */
     public function edit(Author $author)
     {
-        dd($author);
+        return view('admin.authors.edit',[
+            'author' => $author,
+        ]);
     }
 
     /**
