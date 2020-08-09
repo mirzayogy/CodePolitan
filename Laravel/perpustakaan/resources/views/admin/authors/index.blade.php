@@ -20,3 +20,19 @@
         </table>
     </div>
 @endsection
+
+@push('scripts')
+    <script>
+        $(function (){
+            $('#dataTable').DataTable({
+                processing:true,
+                serverSide:true,
+                ajax: '{{ route('admin.author.data')}}',
+                columns:[
+                    {data: 'id'},
+                    {data: 'name'}
+                ]
+            });
+        });
+    </script>
+@endpush
