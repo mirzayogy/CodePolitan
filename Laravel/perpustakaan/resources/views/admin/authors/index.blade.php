@@ -28,6 +28,7 @@
 @endsection
 
 @push('scripts')
+    @include('admin.templates.partials.alerts')
     <script>
         $(function (){
             $('#dataTable').DataTable({
