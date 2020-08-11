@@ -5,10 +5,26 @@
     $('button#delete').on('click', function(e){
         e.preventDefault();
 
-        console.log("a");
-
         var href = $(this).attr('href');
-        document.getElementById('deleteForm').action = href;
-        document.getElementById('deleteForm').submit();
+
+        Swal.fire({
+            title: 'Yakin akan dihapus?',
+            text: "Data yang dihapus tidak dapat dikembalikan!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, hapus saja!'
+            }).then((result) => {
+            if (result.value) {
+                document.getElementById('deleteForm').action = href;
+                document.getElementById('deleteForm').submit();
+                Swal.fire(
+                'Sudah dihapus!',
+                'Data berhasil dihapus.',
+                'success'
+                )
+            }
+        })
     })
 </script>
