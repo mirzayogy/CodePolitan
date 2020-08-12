@@ -12,7 +12,12 @@
                 @csrf
                 <div class="form-group">
                     <label for="">Nama</label>
-                    <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" placeholder="Masukkan nama penulis">
+                    <input type="text" name="name" class="form-control
+                    @error('name')
+                        is-invalid
+                    @enderror"
+                    placeholder="Masukkan nama penulis"
+                    value="{{ old('name') }}">
                     @error('name')
                         <span class="help-block">{{$message}}</span>
                     @enderror

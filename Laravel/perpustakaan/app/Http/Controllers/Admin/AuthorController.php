@@ -41,7 +41,7 @@ class AuthorController extends Controller
     public function store(Request $request)
     {
         $this->validate($request,[
-            'name' => 'required'
+            'name' => 'required|min:3'
         ]);
         Author::create($request->only('name'));
 
