@@ -40,6 +40,9 @@ class AuthorController extends Controller
      */
     public function store(Request $request)
     {
+        $this->validate($request,[
+            'name' => 'required'
+        ]);
         Author::create($request->only('name'));
 
         return redirect()->route('admin.author.index')->with('success','Data penulis berhasil ditambah');
