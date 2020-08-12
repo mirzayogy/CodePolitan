@@ -29,7 +29,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://adminlte.io/docs/3.0" class="nav-link">
+                    <a href="{{route('admin.book.index')}}" class="nav-link">
                         <i class="nav-icon fas fa-book"></i>
                         <p>Buku</p>
                     </a>
