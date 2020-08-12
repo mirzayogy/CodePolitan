@@ -13,7 +13,15 @@
                 @method('PUT')
                 <div class="form-group">
                     <label for="">Nama</label>
-                <input type="text" name="name" class="form-control" placeholder="Masukkan nama penulis" value="{{$author->name}}">
+                <input type="text" name="name" class="form-control
+                    @error('name')
+                        is-invalid
+                    @enderror"
+                    placeholder="Masukkan nama penulis"
+                    value="{{ old('name') ?? $author->name}}">
+                    @error('name')
+                        <span class="help-block">{{$message}}</span>
+                    @enderror
                 </div>
                 <div class="form-group">
                     <button type="submit" value="Tambah" class="btn btn-success"><i class="fa fa-save"></i>  Simpan</button>
