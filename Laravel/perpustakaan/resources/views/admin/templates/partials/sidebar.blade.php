@@ -23,8 +23,8 @@
                 <!-- Add icons to the links using the .nav-icon class
         with font-awesome or any other icon font library -->
                 <li class="nav-item">
-                    <a href="https://adminlte.io/docs/3.0" class="nav-link">
-                        <i class="nav-icon fas fa-user"></i>
+                    <a href="{{route('admin.author.index')}}" class="nav-link">
+                    <i class="nav-icon fas fa-user"></i>
                         <p>Penulis</p>
                     </a>
                 </li>
