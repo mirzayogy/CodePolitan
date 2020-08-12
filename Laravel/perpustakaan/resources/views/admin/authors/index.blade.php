@@ -32,6 +32,12 @@
     <script>
         $(function (){
             $('#dataTable').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
                 processing:true,
                 serverSide:true,
                 ajax: '{{ route('admin.author.data')}}',
