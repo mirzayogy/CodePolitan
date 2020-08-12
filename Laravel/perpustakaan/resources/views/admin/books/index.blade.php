@@ -1,7 +1,7 @@
 @extends('admin.templates.default')
 
 @section('content')
-    <h1>Penulis</h1>
+    <h1>Buku</h1>
 
     <div class="card">
         <div class="card-header">
@@ -13,7 +13,10 @@
                 <thead>
                     <tr>
                         <td>Id</td>
-                        <td>Nama</td>
+                        <td>Judul</td>
+                        <td>Deskripsi</td>
+                        <td>Penulis</td>
+                        <td>Sampul</td>
                         <td>Aksi</td>
                     </tr>
                 </thead>
@@ -32,12 +35,20 @@
     <script>
         $(function (){
             $('#dataTable').DataTable({
-                processing:true,
-                serverSide:true,
-                ajax: '{{ route('admin.author.data')}}',
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+                ajax: '{{ route('admin.book.data')}}',
                 columns:[
                     {data: 'DT_RowIndex', orderable: false, searchable: false},
-                    {data: 'name'},
+                    {data: 'title'},
+                    {data: 'description'},
+                    {data: 'author'},
+                    {data: 'cover'},
                     {data: 'action'}
                 ]
             });
