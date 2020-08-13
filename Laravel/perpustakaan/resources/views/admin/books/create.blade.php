@@ -32,6 +32,17 @@
                     @enderror
                 </div>
                 <div class="form-group">
+                    <label for="">Penulis</label>
+                    <select name="" id="" class="form-control">
+                        @foreach ($authors as $author)
+                            <option value="{{$author->id}}">{{$author->name}}</option>
+                        @endforeach
+                    </select>
+                    @error('description')
+                        <span class="help-block">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
                     <button type="submit" value="Tambah" class="btn btn-success"><i class="fa fa-save"></i>  Simpan</button>
                 </div>
             </form>
