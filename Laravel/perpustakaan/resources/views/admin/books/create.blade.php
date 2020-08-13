@@ -5,20 +5,29 @@
 
     <div class="card">
         <div class="card-header">
-            <h3 class="card-title">Tambah Data Penulis</h3>
+            <h3 class="card-title">Tambah Data Buku</h3>
         </div>
         <div class="card-body">
-        <form action="{{route('admin.author.store')}}" method="POST">
+        <form action="{{route('admin.book.store')}}" method="POST">
                 @csrf
                 <div class="form-group">
-                    <label for="">Nama</label>
-                    <input type="text" name="name" class="form-control
-                    @error('name')
+                    <label for="">Judul</label>
+                    <input type="text" name="title" class="form-control
+                    @error('title')
                         is-invalid
                     @enderror"
                     placeholder="Masukkan nama penulis"
-                    value="{{ old('name') }}">
-                    @error('name')
+                    value="{{ old('title') }}">
+                    @error('title')
+                        <span class="help-block">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="">Judul</label>
+                    <textarea name="description" id="description" rows="3" class="form-control" placeholder="Tuliskan deskripsi">
+                        {{old('description')}}
+                    </textarea>
+                    @error('description')
                         <span class="help-block">{{$message}}</span>
                     @enderror
                 </div>
