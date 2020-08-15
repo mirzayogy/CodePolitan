@@ -8,7 +8,7 @@
             <h3 class="card-title">Tambah Data Buku</h3>
         </div>
         <div class="card-body">
-        <form action="{{route('admin.book.store')}}" method="POST">
+        <form action="{{route('admin.book.store')}}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
                     <label for="">Judul</label>
@@ -33,12 +33,22 @@
                 </div>
                 <div class="form-group">
                     <label for="">Penulis</label>
-                    <select name="" id="" class="form-control">
+                    <select name="" id="" class="form-control select2">
                         @foreach ($authors as $author)
                             <option value="{{$author->id}}">{{$author->name}}</option>
                         @endforeach
                     </select>
                     @error('description')
+                        <span class="help-block">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="">Sampul</label>
+                    <input type="file" name="cover" class="form-control
+                    @error('cover')
+                        is-invalid
+                    @enderror">
+                    @error('cover')
                         <span class="help-block">{{$message}}</span>
                     @enderror
                 </div>
@@ -49,3 +59,16 @@
         </div>
     </div>
 @endsection
+
+@push('select2css')
+    <!-- Select2 -->
+    <link rel="stylesheet" href="{{asset('assets/plugins/select2/css/select2.min.css')}}">
+@endpush
+
+@push('scripts')
+<!-- Select2 -->
+<script src="{{asset('assets/plugins/select2/js/select2.full.min.js')}}"></script>
+<script>
+    $('.select2').select2();
+</script>
+@endpush
