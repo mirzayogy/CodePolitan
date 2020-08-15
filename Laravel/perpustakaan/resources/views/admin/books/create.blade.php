@@ -1,7 +1,7 @@
 @extends('admin.templates.default')
 
 @section('content')
-    <h1>Penulis</h1>
+    <h1>Buku</h1>
 
     <div class="card">
         <div class="card-header">
@@ -16,7 +16,7 @@
                     @error('title')
                         is-invalid
                     @enderror"
-                    placeholder="Masukkan nama penulis"
+                    placeholder="Masukkan judul buku"
                     value="{{ old('title') }}">
                     @error('title')
                         <span class="help-block">{{$message}}</span>
@@ -24,21 +24,19 @@
                 </div>
                 <div class="form-group">
                     <label for="">Judul</label>
-                    <textarea name="description" id="description" rows="3" class="form-control" placeholder="Tuliskan deskripsi">
-                        {{old('description')}}
-                    </textarea>
+                    <textarea name="description" id="description" rows="3" class="form-control" placeholder="Tuliskan deskripsi">{{old('description')}}</textarea>
                     @error('description')
                         <span class="help-block">{{$message}}</span>
                     @enderror
                 </div>
                 <div class="form-group">
                     <label for="">Penulis</label>
-                    <select name="" id="" class="form-control select2">
+                    <select name="author_id" id="" class="form-control select2">
                         @foreach ($authors as $author)
                             <option value="{{$author->id}}">{{$author->name}}</option>
                         @endforeach
                     </select>
-                    @error('description')
+                    @error('author_id')
                         <span class="help-block">{{$message}}</span>
                     @enderror
                 </div>
@@ -49,6 +47,18 @@
                         is-invalid
                     @enderror">
                     @error('cover')
+                        <span class="help-block">{{$message}}</span>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="">Jumlah</label>
+                    <input type="number" name="qty" class="form-control
+                    @error('qty')
+                        is-invalid
+                    @enderror"
+                    placeholder="Masukkan judul buku"
+                    value="{{ old('qty') }}">
+                    @error('qty')
                         <span class="help-block">{{$message}}</span>
                     @enderror
                 </div>
