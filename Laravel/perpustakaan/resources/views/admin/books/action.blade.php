@@ -1,5 +1,5 @@
 <a href="{{route('admin.book.edit', $model)}}" class="btn btn-success"><i class="fa fa-edit"></i></a>
-<button href="{{route('admin.book.destroy', $model)}}" id="delete" class="btn btn-danger" ><i class="fa fa-trash" ></i></button>
+<button href= "{{route('admin.book.destroy', $model)}}" id="delete" class="btn btn-danger" ><i class="fa fa-trash" ></i></button>
 
 <script>
     $('button#delete').on('click', function(e){
