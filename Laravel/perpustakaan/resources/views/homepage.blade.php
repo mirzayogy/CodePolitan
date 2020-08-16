@@ -26,6 +26,33 @@
         <li><a href="#">Register</a></li>
     </ul>
 
+    <div class="container">
+        <h2>Koleksi Buku</h2>
+        <blockquote>
+            <p class="flow-text">Koleksi Buku yang bisa dibaca dan dipinjam</p>
+        </blockquote>
+        <div class="row">
+            @for ($i = 0; $i < 10; $i++)
+                <div class="col s12 m6">
+                    <div class="card horizontal">
+                        <div class="card-image">
+                            <img src="https://lorempixel.com/100/190/nature/6">
+                        </div>
+                        <div class="card-stacked">
+                            <div class="card-content">
+                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                            </div>
+                            <div class="card-action">
+                            <a href="#">This is a link</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @endfor
+        </div>
+
+
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script>
