@@ -14,9 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('homepage');
-});
+Route::get('/', 'Frontend\BookController@index');
 
 Route::get('/users', function () {
     return view('admin.users.index');
