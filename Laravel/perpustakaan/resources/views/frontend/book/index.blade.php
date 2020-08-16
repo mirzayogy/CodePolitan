@@ -7,23 +7,24 @@
             <p class="flow-text">Koleksi Buku yang bisa dibaca dan dipinjam</p>
         </blockquote>
         <div class="row">
-            @for ($i = 0; $i < 10; $i++)
+            @foreach ($books as $book)
                 <div class="col s12 m6">
                     <div class="card horizontal hoverable">
                         <div class="card-image">
-                            <img src="https://lorempixel.com/100/190/nature/6">
+                            <img src="{{ $book->getCOver() }}">
                         </div>
                         <div class="card-stacked">
                             <div class="card-content">
-                            <p>I am a very simple card. I am good at containing small bits of information.</p>
+                            <h6>{{$book->title}}</h6>
+                            <p>{{$book->description}}</p>
                             </div>
                             <div class="card-action">
-                            <a href="#">This is a link</a>
+                            <a href="#">Pinjam Buku</a>
                             </div>
                         </div>
                     </div>
                 </div>
-            @endfor
+            @endforeach
         </div>
 
         <ul class="pagination">
