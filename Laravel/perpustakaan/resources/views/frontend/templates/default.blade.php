@@ -3,10 +3,6 @@
 @include('frontend.templates.partials.head')
 <body>
     @include('frontend.templates.partials.navigation')
-    <ul class="sidenav" id="mobile-demo">
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Register</a></li>
-    </ul>
 
     <div class="container">
         @yield('content')
