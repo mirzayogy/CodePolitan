@@ -11,12 +11,12 @@
                 <div class="col s12 m6">
                     <div class="card horizontal hoverable">
                         <div class="card-image">
-                            <img src="{{ $book->getCOver() }}">
+                            <img src="{{ $book->getCOver() }}" height="200px">
                         </div>
                         <div class="card-stacked">
                             <div class="card-content">
-                            <h6>{{$book->title}}</h6>
-                            <p>{{$book->description}}</p>
+                            <h6>{{ Str::limit($book->title,20)}}</h6>
+                            <p>{{ Str::limit($book->description,30)}}</p>
                             </div>
                             <div class="card-action">
                             <a href="#">Pinjam Buku</a>
