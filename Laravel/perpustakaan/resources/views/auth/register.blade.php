@@ -19,7 +19,7 @@
             <div class="input-field col s12">
                 <i class="material-icons prefix">email</i>
                 <input type="email" class="@error('email')is-invalid @enderror" name="email" id="email" value="{{ old('email') }}">
-                <label for="email">Password Confirmation</label>
+                <label for="email">Email</label>
                 @error('email')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -40,10 +40,6 @@
                 <i class="material-icons prefix">lock</i>
                 <input type="password" class="@error('password_confirmation')is-invalid @enderror" id="password_confirmation" name="password_confirmation" autocomplete="new-password">
                 <label for="password_confirmation">Password Confirmation</label>
-                {{-- @error('password_confirmation')
-                    <span class="helper-text" data-error="{{$message}}">
-                    </span>
-                @enderror --}}
             </div>
             <div class="input field right">
                 <button type="submit" value="Register" class="waves-effect waves-light btn red accent-1">Register</button>
