@@ -18,6 +18,12 @@
                             <blockquote>
                                 <p>{{ $book->description}}</p>
                             </blockquote>
+                            <p>
+                                <i class="material-icons">person</i> : {{$book->author->name}}
+                            </p>
+                            <p>
+                                <i class="material-icons">book</i> : {{$book->qty}}
+                            </p>
                             </div>
                             <div class="card-action">
                                 <a class="btn red accent-1 right waves-light waves-effect" href="#">Pinjam Buku</a>
