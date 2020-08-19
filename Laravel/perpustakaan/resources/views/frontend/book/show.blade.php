@@ -24,7 +24,10 @@
                             </p>
                             </div>
                             <div class="card-action">
-                                <a class="btn red accent-1 right waves-light waves-effect" href="#">Pinjam Buku</a>
+                                <form action="{{route('book.borrow',$book)}}" method="POST">
+                                    @csrf
+                                    <button type="submit" class="btn red accent-1 right waves-light waves-effect">Pinjam Buku</button>
+                                </form>
                             </div>
                         </div>
                     </div>
