@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'Frontend\BookController@index')->name('homepage');
 Route::get('/book/{book}', 'Frontend\BookController@show')->name('book.show');
+Route::post('/book/{book}/borrow', 'Frontend\BookController@borrow')->name('book.borrow')->middleware('auth');
 
 Route::get('/users', function () {
     return view('admin.users.index');
