@@ -36,8 +36,13 @@ class BookController extends Controller
     public function borrow(Book $book){
         $user = auth()->user();
 
-        $user->borrow()->attach($book);
+        if($user->borrow()->where('books.id', $book->id)->count() > 0){
+            return redirect()->back()->with('toast','Sudah pinjam buku : ' . $book->title);
+        }
 
-        return redirect()->back();
+        $user->borrow()->attach($book);
+        $book->decrement('qty');
+
+        return redirect()->back()->with('toast','Berhasil meminjam buku');
     }
 }
